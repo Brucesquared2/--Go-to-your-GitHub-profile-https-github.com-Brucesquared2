@@ -1,1 +1,3 @@
-# --Go-to-your-GitHub-profile-https-github.com-Brucesquared2
+# GitHub Profile
+
+[Go to my GitHub profile](https://github.com/Brucesquared2)
