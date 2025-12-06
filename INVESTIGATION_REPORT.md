@@ -38,7 +38,7 @@ Based on GitHub search, you currently have **3 repositories**:
 
 **No, Copilot is not merging your repositories together.** However, Copilot made an error in PR #1:
 
-- It **hallucinated** or **incorrectly referenced** a repository that doesn't exist (MAPS-QUADCore)
+- It **generated an incorrect reference to** a repository that doesn't exist (MAPS-QUADCore)
 - This may have happened because:
   - The description "Modular cockpit for agent orchestration, trading overlays, and MDPS core" might have been confused with content from another context
   - Copilot may have generated a plausible-sounding project name based on the context
