@@ -4,4 +4,4 @@
 
 ## Projects
 
-- [MAPS-Quadcore](https://github.com/Brucesquared2/MAPS-Quadcore)
+- [MAPS-QUADCore](https://github.com/Brucesquared2/MAPS-QUADCore) - Modular cockpit for agent orchestration, trading overlays, and MDPS core.
