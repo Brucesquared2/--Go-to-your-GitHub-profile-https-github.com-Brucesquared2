@@ -1,0 +1,60 @@
+{
+  "log_level": "INFO",
+  "pid_file": "/var/run/ai-orchestrator.pid",
+  "socket_path": "/var/run/ai-orchestrator.sock",
+
+  "use_kernel_module": true,
+  "kernel_device": "/dev/claude",
+
+  "default_backend": "ollama",
+  "fallback_enabled": true,
+
+  "max_concurrent": 4,
+  "request_timeout": 120,
+  "queue_size": 100,
+
+  "backends": [
+    {
+      "name": "ollama",
+      "type": "ollama",
+      "enabled": true,
+      "host": "http://localhost",
+      "port": 11434,
+      "model": "llama2",
+      "priority": 1,
+      "options": {
+        "temperature": 0.7,
+        "top_p": 0.9,
+        "num_ctx": 4096,
+        "timeout": 120
+      }
+    },
+    {
+      "name": "ollama-code",
+      "type": "ollama",
+      "enabled": true,
+      "host": "http://localhost",
+      "port": 11434,
+      "model": "codellama",
+      "priority": 2,
+      "options": {
+        "temperature": 0.2,
+        "top_p": 0.95,
+        "num_ctx": 8192
+      }
+    },
+    {
+      "name": "claude-api",
+      "type": "claude",
+      "enabled": false,
+      "host": "https://api.anthropic.com",
+      "model": "claude-3-sonnet-20240229",
+      "api_key": "",
+      "priority": 3,
+      "options": {
+        "max_tokens": 4096,
+        "timeout": 120
+      }
+    }
+  ]
+}

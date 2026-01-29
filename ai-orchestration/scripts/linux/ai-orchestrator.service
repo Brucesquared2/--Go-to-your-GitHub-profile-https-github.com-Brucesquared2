@@ -1,0 +1,36 @@
+[Unit]
+Description=AI Orchestrator Service
+Documentation=https://github.com/Brucesquared2/ai-orchestration
+After=network.target ollama.service claude-module.service
+Wants=ollama.service
+
+[Service]
+Type=simple
+User=root
+Group=root
+
+# Environment
+Environment=PYTHONUNBUFFERED=1
+EnvironmentFile=-/etc/ai-orchestrator/environment
+
+# Paths
+WorkingDirectory=/opt/ai-orchestration
+ExecStart=/usr/bin/python3 /opt/ai-orchestration/orchestrator/ai_orchestrator.py start
+ExecStop=/usr/bin/python3 /opt/ai-orchestration/orchestrator/ai_orchestrator.py stop
+ExecReload=/bin/kill -HUP $MAINPID
+
+# Restart policy
+Restart=on-failure
+RestartSec=10
+
+# Security
+NoNewPrivileges=false
+ProtectSystem=false
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=ai-orchestrator
+
+[Install]
+WantedBy=multi-user.target

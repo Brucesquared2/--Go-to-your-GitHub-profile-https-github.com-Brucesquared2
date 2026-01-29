@@ -1,0 +1,18 @@
+# AI Orchestrator Environment Configuration
+# Copy this file to /etc/ai-orchestrator/environment and customize
+
+# Ollama Settings
+OLLAMA_HOST=http://localhost:11434
+OLLAMA_MODELS_PATH=/usr/share/ollama/.ollama/models
+
+# Claude API (optional)
+# ANTHROPIC_API_KEY=sk-ant-...
+
+# OpenAI API (optional)
+# OPENAI_API_KEY=sk-...
+
+# Logging
+LOG_LEVEL=INFO
+
+# Python settings
+PYTHONUNBUFFERED=1
